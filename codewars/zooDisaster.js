@@ -35,15 +35,6 @@
 // "fox,bug,chicken,grass,sheep" ======= input
 // ["fox,bug,chicken,grass,sheep", "chicken eats bug", "fox eats chicken", "sheep eats grass", "fox eats sheep", "fox"] ====== output
 
-// PSEUDOCODE
-// account for all types of animals and what they eat / An array ...
-// Organize each type with a value equivlent to postion in food chain
-// sort thourgh list displacing animals based on the values they hold
-// construct string for each animal in list pertaining to placement
-// going to create an object with keys of animal name and properties of an array of animals they eat
-// value of array.length may be used for pecking order
-// edibals that do not eat will not be pushed in order to not effect value of animal
-// animals that do not get eaten get auto value of
 
 let animals = ["antelope eats grass",
     "big-fish eats little-fish",

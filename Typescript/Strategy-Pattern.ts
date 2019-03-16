@@ -44,6 +44,7 @@ class Mute implements QuackBehavior{
 abstract class Duck{
     flyBehavior:Flybehavior;
     quackBehavior:QuackBehavior;
+    subSpecie:string;
     abstract display():void;
     performQuack(){
         this.quackBehavior.quack()
@@ -62,15 +63,24 @@ abstract class Duck{
 
 // Derived instance classes
 class Mallard extends Duck{
-    flyBehavior = new NoFly();
-    quackBehavior = new Quack()
+    constructor(fly?:Flybehavior, quack?:QuackBehavior, subSpecie?:string){
+        super();
+        this.flyBehavior = fly || new NoFly();
+        this.quackBehavior = quack || new Quack();
+        this.subSpecie = subSpecie || null;
+    }
+
     display(){
-        console.log("I'm a Mallard");
+        console.log(`I'm a ${this.subSpecie} Mallard`);
     }
 }
 class RubberDuck extends Duck{
-    flyBehavior = new NoFly();
-    quackBehavior = new Squeak();
+    constructor(fly?:Flybehavior, quack?:QuackBehavior, subSpecie?:string){
+        super();
+        this.flyBehavior = fly || new NoFly();
+        this.quackBehavior = quack || new Squeak();
+        this.subSpecie = subSpecie || null;
+    }
     display(){
         console.log("Rubber Ducky");
     }
@@ -89,3 +99,9 @@ debucky.performFly();
 debucky.performQuack();
 debucky.setFlyBehavior(new FlysByPerson());
 debucky.performFly();
+
+const subMal = new Mallard(new FlyWithwings(),new Mute(),"striped")
+subMal.display();
+subMal.performFly();
+subMal.performQuack();
+

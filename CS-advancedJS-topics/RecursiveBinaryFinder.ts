@@ -1,7 +1,8 @@
 
 
-//Function that prints binary representation of an Int passed as an argument using recursion;
-// buildBinary(43) == 101011;
+//Method that builds binary representation of an Int passed as an argument using recursion;
+// buildBinary(43) === Binary = 101011;
+
 class Main {
   static Binary:string = "";
   static buildBinary(n:number):void{
